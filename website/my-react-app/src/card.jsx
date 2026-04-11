@@ -10,3 +10,12 @@ function Card(){
     )
 }
 export default Card;
+
+
+// -------------------------------------->
+
+// the following ways we can apply css in react 
+// 1. inline css
+// 2. internal css 
+// 3. external css
+// 4. modulas css
