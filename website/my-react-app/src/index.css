@@ -1,3 +1,4 @@
+/* @import "tailwindcss";
 .card{
   border: 10px solid white;
   border-radius: 10px;
@@ -34,4 +35,19 @@ img{
   cursor: pointer;
   border-radius: 5px;
 
-} */
+} */ 
+
+.student{
+  font-size: 2em;
+  color:rgb(13, 27, 28);
+  border:2px solid black;
+  padding: 4px 5px;
+  margin: 20px;
+  border-radius:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.student p{
+  margin:0px;
+  
+}
