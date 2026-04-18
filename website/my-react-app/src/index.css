@@ -49,5 +49,19 @@ img{
 
 .student p{
   margin:0px;
-  
+
+}
+
+.welcome_mess{
+  font-size: 2.5em;
+  color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: brown;
+}
+
+.login_failed{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: blue;
+  font-size: 5em;
+  background-color: rosybrown;
 }
