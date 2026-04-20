@@ -7,6 +7,7 @@ import Student from './student.jsx';
 import UserGreeting from './UserGreeting.jsx';
 import List from './list.jsx';
 import Sample from './sample.jsx';
+import Contact from './contact.jsx';
 function App() {
   // const fruits = [
   //       { id: 1, name: "apple", calorie: 95 },
@@ -20,6 +21,7 @@ function App() {
     {/* <UserGreeting isLoggedIn ={true} /> */}
     {/* <List items={fruits} category="fruits"/> */}
     <Sample/>
+    <Contact/>
 
     </>
   );
