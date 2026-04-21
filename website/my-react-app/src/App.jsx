@@ -6,22 +6,31 @@ import Button from './button.jsx';
 import Student from './student.jsx';
 import UserGreeting from './UserGreeting.jsx';
 import List from './list.jsx';
-import Sample from './sample.jsx';
-import Contact from './contact.jsx';
+// import Sample from './sample.jsx';
+// import Contact from './contact.jsx';
 function App() {
-  // const fruits = [
-  //       { id: 1, name: "apple", calorie: 95 },
-  //       { id: 2, name: "orange", calorie: 45 },
-  //       { id: 3, name: "banana", calorie: 105 },
-  //       { id: 4, name: "coconut", calorie: 159 },
-  //       { id: 5, name: "pineapple", calorie: 37 }
-  //   ];
-  return (
+  const fruits = [
+        { id: 1, name: "apple", calorie: 95 },
+        { id: 2, name: "orange", calorie: 45 },
+        { id: 3, name: "banana", calorie: 105 },
+        { id: 4, name: "coconut", calorie: 159 },
+        { id: 5, name: "pineapple", calorie: 37 }
+    ];
+
+    const vegetables = [
+      { id : 1, name: "Carrot", calorie: 41},
+      { id : 2, name: "potato", calorie: 77},
+      { id : 3, name: "spinach", calorie: 23},
+      { id : 4, name: "beans", calorie: 31},
+      { id : 5, name: "broccoli", calorie: 53},
+
+    ];
+  return(
     <>
-    {/* <UserGreeting isLoggedIn ={true} /> */}
-    {/* <List items={fruits} category="fruits"/> */}
-    <Sample/>
-    <Contact/>
+    {/* <UserGreeting isLoggedIn ={true} />  */}
+    <List items={fruits} category="fruits"/>
+    
+    <List items={vegetables} category="vegetables"/>
 
     </>
   );

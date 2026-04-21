@@ -21,8 +21,9 @@ function List(props) {
 
     // FIXED 2: Matched the exact spelling and capitalization of 'ListItems'
     return(<>
-    <ol>{ListItems}</ol>
-    <h3>{category}</h3>
+    <b><h1 className="category">{category}</h1></b>
+    <br></br>
+    <ol className="items">{ListItems}</ol>
     </>)
 }
 
