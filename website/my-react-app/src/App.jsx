@@ -28,9 +28,9 @@ function App() {
   return(
     <>
     {/* <UserGreeting isLoggedIn ={true} />  */}
-    <List items={fruits} category="fruits"/>
+    {fruits.length > 0 && <List items={fruits} category="fruits"/>}
     
-    <List items={vegetables} category="vegetables"/>
+    {vegetables.length > 0 && <List items={vegetables} category="vegetables"/>}
 
     </>
   );

@@ -71,12 +71,20 @@ img{
   color: red;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 1.5em;
+  background-color: cornflowerblue;
+  border: 2px solid black;
+  padding: 10px;
 }
 .items{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: yellowgreen;
   border:2px solid black;
   padding: 10px;
-  
+  text-align: center;
+  margin:0px;
+}
 
+.items li:hover{
+  color:crimson;
+  cursor:pointer;
 }

@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 // FIXED 1: Added 'props' as an argument
+
 function List(props) {
     
     // fruits.sort((a,b) =>a.name.localeCompare(b.name));  // Sort Alphabetically
@@ -26,5 +28,14 @@ function List(props) {
     <ol className="items">{ListItems}</ol>
     </>)
 }
-
+List.defaultProps = {
+    category: "Category",
+    items: [],
+}
+List.propsTypes = {
+    category: PropTypes.string,
+    items: PropTypes.arrayof(PropTypes.shape({id: PropTypes.number,
+                                             name: PropTypes.string,
+                                             calorie: PropTypes.number}))
+}
 export default List;
