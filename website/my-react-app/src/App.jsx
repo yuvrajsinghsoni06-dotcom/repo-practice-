@@ -5,7 +5,8 @@ import Card from './card.jsx';
 import Button from './button.jsx';
 import Student from './student.jsx';
 import UserGreeting from './UserGreeting.jsx';
-import List from './list.jsx';
+// import List from './list.jsx';
+import Practice from './practice.jsx';
 // import Sample from './sample.jsx';
 // import Contact from './contact.jsx';
 function App() {
@@ -28,9 +29,9 @@ function App() {
   return(
     <>
     {/* <UserGreeting isLoggedIn ={true} />  */}
-    {fruits.length > 0 && <List items={fruits} category="fruits"/>}
-    
-    {vegetables.length > 0 && <List items={vegetables} category="vegetables"/>}
+    {/* {fruits.length > 0 && <List items={fruits} category="fruits"/>}
+    {vegetables.length > 0 && <List items={vegetables} category="vegetables"/>} */}
+    <Practice />
 
     </>
   );
