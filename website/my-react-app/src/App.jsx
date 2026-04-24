@@ -6,9 +6,11 @@ import Button from './button.jsx';
 import Student from './student.jsx';
 import UserGreeting from './UserGreeting.jsx';
 // import List from './list.jsx';
-import Practice from './practice.jsx';
-// import Sample from './sample.jsx';
-// import Contact from './contact.jsx';
+// import Practice from './practice.jsx';
+import Sample from './sample.jsx';
+import Contact from './contact.jsx';
+import {Route , Routes} from "react-rounter-dom"
+
 function App() {
   const fruits = [
         { id: 1, name: "apple", calorie: 95 },
@@ -31,7 +33,12 @@ function App() {
     {/* <UserGreeting isLoggedIn ={true} />  */}
     {/* {fruits.length > 0 && <List items={fruits} category="fruits"/>}
     {vegetables.length > 0 && <List items={vegetables} category="vegetables"/>} */}
-    <Practice />
+    {/* <Practice /> */}
+    <Routes>
+      <Route path='/' element=(<><HomePage/><Sample/></>)
+    </Routes>
+    <Sample/>
+    <Contact/>
 
     </>
   );

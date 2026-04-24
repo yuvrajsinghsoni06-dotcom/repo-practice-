@@ -6,10 +6,18 @@ function Contact() {
     const [message,setMessage]=useState("")
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Name:", name)
-        console.log("Email", email)
-        console.log("Message", message)
+    e.preventDefault();
+
+    // 1. Check if the email matches your criteria
+    if (email.endsWith("krmu.edu.in")) {
+        console.log("Name:", name);
+        console.log("Email:", email);
+        console.log("Message:", message);
+        alert("Form Submitted successfully!");
+    } else {
+        alert("Please use a valid krmu.edu.in email address.");
+    }
+}; // Don't forget this closing brace!
     }
   return (
     <div>
@@ -22,6 +30,5 @@ function Contact() {
       </form>
     </div>
   )
-}
 
 export default Contact

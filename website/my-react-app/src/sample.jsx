@@ -1,7 +1,7 @@
 
 import React,{Component, useState, useEffect, useRef} from 'react'
-import style from '../css/Sample.module.css'
-import style1 from '../css/HomePage.module.css'
+// import style from '../css/Sample.module.css'
+// import style1 from '../css/HomePage.module.css'
 // import styled from 'styled-components'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
@@ -151,3 +151,8 @@ const Button=styled.button`
 
 // }
 // export default Sample
+
+const handlesubmit = (e) =>{
+    e.preventDefault();
+    
+}
