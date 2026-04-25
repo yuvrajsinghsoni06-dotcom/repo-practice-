@@ -88,3 +88,8 @@ img{
   color:crimson;
   cursor:pointer;
 }
+
+img{
+  width: 50%;
+  height: auto;
+}

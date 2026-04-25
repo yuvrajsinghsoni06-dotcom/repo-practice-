@@ -13,10 +13,14 @@
 //    }
 // `;
 
-function Button(){
-    return(<><button className={styles.btn}>Handsome</button>
-        <button className={`bg-red-500 text-white w-20 h-8`}>hello</button>
-        </>);
+function Button() {
+    const handlecheck = (e) => e.target.style.display = "none ";
+    const imgurl = "./src/assets/img.jpeg";
+
+    // const handlecheck2 = (name) =>{console.log(`${name} stop clicking the btn`)};
+    return(
+        <img onClick={(e) =>handlecheck(e)} src={imgurl}></img>
+    );
 }
 
 export default Button;
