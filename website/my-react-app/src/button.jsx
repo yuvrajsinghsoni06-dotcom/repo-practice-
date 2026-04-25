@@ -14,12 +14,13 @@
 // `;
 
 function Button() {
-    const handlecheck = (e) => e.target.style.display = "none ";
-    const imgurl = "./src/assets/img.jpeg";
+    const handlecheck = (e) => e.target.textContent = "I love you 💋";
+    // const imgurl = "./src/assets/img.jpeg";
 
     // const handlecheck2 = (name) =>{console.log(`${name} stop clicking the btn`)};
     return(
-        <img onClick={(e) =>handlecheck(e)} src={imgurl}></img>
+        // <img onClick={(e) =>handlecheck(e)} src={imgurl}></img>
+        <button className="btn1" onClick={handlecheck}>Click me</button>
     );
 }
 
