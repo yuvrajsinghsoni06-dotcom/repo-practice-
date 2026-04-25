@@ -1,12 +1,12 @@
-import Profile from './Profile.jsx';
-import Button from './button.jsx';
+import Mycomponent from "./Mycomponent";
+import Counter from './counter.jsx';
 
 function App() {
 
   return(
     <>
-    {/* <Profile/> */}
-    <Button/>
+    {/* <Mycomponent/> */}
+    <Counter/>
     </>
   );
 }

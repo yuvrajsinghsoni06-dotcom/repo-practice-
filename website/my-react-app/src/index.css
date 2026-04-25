@@ -89,7 +89,78 @@ img{
   cursor:pointer;
 }
 
-img{
+/* img{
   width: 50%;
   height: auto;
+} */
+
+
+/* Centers the box on the page and gives it a card-like appearance */
+.box-1 {
+  max-width: 350px;
+  margin: 50px auto; /* Centers the box horizontally */
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Flexbox to neatly stack and center the inner items */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Adds space between paragraphs and buttons */
+}
+
+/* Styling for the text */
+.box-1 p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* Shared button styling */
+.btn1, .btn2 , .btn4{
+  width: 80%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Gives a tiny click effect when pressed */
+.btn1:active, .btn2:active .btn4:active {
+  transform: scale(0.98);
+}
+
+/* Specific styling for the 'Update Name' button */
+.btn1 {
+  background-color: #4f46e5;
+  color: #ffffff;
+}
+
+.btn1:hover {
+  background-color: #4338ca;
+}
+
+/* Specific styling for the 'Update Age' buttons */
+.btn2 {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.btn2:hover {
+  background-color: #059669;
+}
+.btn4{
+  background-color:#4338ca;
+  color: white;
+}
+
+.btn4:hover {
+  background-color: #059669;
 }
