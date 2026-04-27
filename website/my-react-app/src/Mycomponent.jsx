@@ -4,8 +4,9 @@ function Mycomponent(){
 
     const [Name , setname] = useState("Guest");
     const [quantity , setquantity] = useState(0);
-    const [comment , setComment] = useState(" I love you 💋");
+    const [comment , setComment] = useState(" I Realist");
     const [payment , setPayment] = useState("");
+    const [shipped , setShipped] = useState("Delivery");
 
 
     function handleEvent(e){
@@ -23,6 +24,10 @@ function Mycomponent(){
     function handlePayment(e){
         setPayment(e.target.value);
     }
+
+    function handleShipping(e){
+        setShipped(e.target.value);
+    }
     return(
         <div className="box-1">
             <input className="btn4" value={Name} onChange={handleEvent}/>
@@ -38,6 +43,16 @@ function Mycomponent(){
                 <option value="debit">Debit card</option>
                 <option value="Mastercard">Mastercard</option>
             </select>
+            <label>
+                <input type="radio" name="shipping" value="Pick up" checked={shipped === "Pick Up"} onChange={handleShipping} />
+                pick Up
+            </label>
+            <label>
+                <input type="radio" name="shipping" value="Delivery" checked={shipped === "Delivery"} onChange={handleShipping} />
+                Delivery
+            </label>
+            <p> Shipping : {shipped}</p>
+
         </div>
     );
 
