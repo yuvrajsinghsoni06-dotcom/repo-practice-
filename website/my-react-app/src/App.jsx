@@ -1,14 +1,13 @@
-import Mycomponent from "./Mycomponent";
-import Counter from './counter.jsx';
-import Button from "./button.jsx";
+import ColorPicker from "./colorPicker";
+import Search from "./Search.jsx";
 
 function App() {
 
   return(
     <>
-    <Mycomponent/>
-    {/* <Counter/> */}
-    <Button/>
+    {/* <ColorPicker/> */}
+    <Search/>
+ 
     </>
   );
 }
