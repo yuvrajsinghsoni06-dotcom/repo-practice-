@@ -1,30 +1,40 @@
-import React , {useState} from 'react'
+import React, { useState } from 'react';
 
-function Mycomponent() {
+function MyComponent() {
+    const [food, setFood] = useState(["Apple", "Banana", "Watermelon"]);
 
-    const [car , setCar] = useState({year : 2025 , 
-                                    make : "Ford" , 
-                                    model : "Mustang"
-    });
-
-    function handleYearChange(e){
-        setCar(c => ({...c,year: e.target.value}));
+    function handleAddFood() {
+        const foodInput = document.getElementById("foodinput");
+        const newFood = foodInput.value;
+        
+        if (newFood.trim() !== "") {
+            // Correct way: Call the function, don't assign to it
+            setFood(f => [...f, newFood]);
+            foodInput.value = "";
+        }
     }
-    function handleMakeChange(e){
-        setCar(c => ({...c,make: e.target.value}));
-    }
-    function handleModelChange(e){
-        setCar(c => ({...c,model: e.target.value}))
-    }
-  return (
-    <div>
-        <p className="box-1">Your Favourite car is : {car.year} {car.make} {car.model}</p>
 
-        <input className="btn1" type="number" value={car.year} onChange={handleYearChange}></input><br></br>
-        <input className="btn2" type="Name" value={car.make} onChange={handleMakeChange}></input><br></br>
-        <input className="btn4" type="Model" value={car.model} onChange={handleModelChange}></input><br></br>
-    </div>
-  )
+    function handleRemoveFood(index) {
+        // Filter creates a new array excluding the item at the clicked index
+        setFood(food.filter((_, i) => i !== index));
+    }
+
+    return (
+        <div className='box-1'>
+            <h2>List of Food</h2>
+            <ul className="parent">
+                {food.map((item, index) => (
+                    <li key={index} onClick={() => handleRemoveFood(index)}>
+                        {item}
+                    </li>
+                ))}
+            </ul>
+            
+            <input type="text" id="foodinput" placeholder="Enter your Food" />
+            <button onClick={handleAddFood}>Add Food</button>
+            <p><i>(Tip: Click an item to remove it)</i></p>
+        </div>
+    );
 }
 
-export default Mycomponent
+export default MyComponent;

@@ -7,7 +7,7 @@ function App() {
   return(
     <>
     <Mycomponents/>
-    <Counter/>
+    {/* <Counter/> */}
    
  
     </>
