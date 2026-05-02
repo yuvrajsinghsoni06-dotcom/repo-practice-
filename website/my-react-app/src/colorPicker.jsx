@@ -1,9 +1,9 @@
 
-import React , {onState} from "react";
+import React , {useState} from "react";
 
 function ColorPicker(){
 
-    const [color , setColor] = onState("red");
+    const [color , setColor] = useState("#f9f9f9");
 
     function handleColorChange(e){
         setColor(e.target.value);
@@ -16,10 +16,10 @@ function ColorPicker(){
             <h1>Color Picker</h1> 
                        <div className="color-display"
                  style={{backgroundColor:  color}}>
-                    <p> Sdelected- Color  : {color}</p>
+                    <p> Selected- Color  : {color}</p>
             </div>
             <label>Select a Color:</label>
-            <input types="color" value={color} onChange={handleColorChange}></input>
+            <input type="color" value={color} onChange={handleColorChange}></input>
         </div>
     )
 }
