@@ -1,57 +1,79 @@
 import React, { useState } from 'react';
 
 function TodoList() {
-    const [tasks, setTasks] = useState([]);
-    const [newTask, setNewTask] = useState("");
+    // Initial state based on your disciplines
+    const [tasks, setTasks] = useState(["Praying to Gods", "Mediation", "Classics", "Exercise"]);
+    const [newTasks, setNewTasks] = useState("");
 
-    // Update the input field as the user types
-    const handleInputChange = (e) => {
-        setNewTask(e.target.value);
-    };
+    function handleInputBox(e) {
+        setNewTasks(e.target.value);
+    }
 
-    // Add a new task object to the array
-    const addTask = () => {
-        if (newTask.trim() !== "") {
-            setTasks(t => [...t, { text: newTask, completed: false }]);
-            setNewTask(""); // Clear input
+    function addTask() {
+        if (newTasks.trim() !== "") {
+            setTasks(t => [...t, newTasks]);
+            setNewTasks(""); // Clear the input
         }
-    };
+    }
 
-    // Toggle the completed status of a specific task
-    const toggleTask = (index) => {
-        const updatedTasks = tasks.map((task, i) => 
-            i === index ? { ...task, completed: !task.completed } : task
-        );
-        setTasks(updatedTasks);
-    };
+    function removeTask(index) {
+        // filter creates a NEW array, which React needs to trigger a re-render
+        setTasks(t => t.filter((_, i) => i !== index));
+    }
 
-    // Remove a task from the list
-    const deleteTask = (index) => {
-        setTasks(tasks.filter((_, i) => i !== index));
-    };
+    function moveUpTask(index) {
+        if (index > 0) {
+            const updatedTasks = [...tasks];
+            [updatedTasks[index], updatedTasks[index - 1]] = 
+            [updatedTasks[index - 1], updatedTasks[index]];
+            setTasks(updatedTasks);
+        }
+    }
+
+    function moveDownTask(index) {
+        if (index < tasks.length - 1) {
+            const updatedTasks = [...tasks];
+            [updatedTasks[index], updatedTasks[index + 1]] = 
+            [updatedTasks[index + 1], updatedTasks[index]];
+            setTasks(updatedTasks);
+        }
+    }
 
     return (
         <div className="todo-container">
-            <h1>Daily Objectives</h1>
+            <h1>To-Do List</h1>
             
             <div className="input-group">
                 <input 
-                    type="text" 
-                    placeholder="Enter a task..." 
-                    value={newTask} 
-                    onChange={handleInputChange} 
+                    type="text"
+                    className="Task-box"
+                    placeholder="Enter a task..."
+                    value={newTasks}
+                    onChange={handleInputBox} // MUST be camelCase
                 />
-                <button onClick={addTask}>Add</button>
+                <button className="add-btn" onClick={addTask}>
+                    Add
+                </button>
             </div>
 
-            <ul>
+            <ol>
                 {tasks.map((task, index) => (
-                    <li key={index} style={{ textDecoration: task.completed ? "line-through" : "none" }}>
-                        <span onClick={() => toggleTask(index)}>{task.text}</span>
-                        <button onClick={() => deleteTask(index)}>Delete</button>
+                    <li key={index}>
+                        <span className="text">{task}</span>
+                        <div className="button-group">
+                            <button className="del-btn" onClick={() => removeTask(index)}>
+                                ❌
+                            </button>
+                            <button className="move-btn" onClick={() => moveUpTask(index)}>
+                                👆
+                            </button>
+                            <button className="move-btn" onClick={() => moveDownTask(index)}>
+                                👇
+                            </button>
+                        </div>
                     </li>
                 ))}
-            </ul>
+            </ol>
         </div>
     );
 }
