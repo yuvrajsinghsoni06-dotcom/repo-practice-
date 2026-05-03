@@ -1,0 +1,37 @@
+/* 1. Use a class for shared button styles (The "DRY" Principle) */
+.btn {
+    padding: 10px 20px; /* Fixed: 0px padding made buttons unusable */
+    font-size: larger;
+    color: blue;
+    background-color: rgb(227, 195, 150);
+    cursor: pointer;
+    transition: 0.25s;
+    border-radius: 5px;
+    border: 1px solid #333; /* Added a slight border for definition */
+    margin: 5px; /* Added spacing between buttons */
+}
+
+/* 2. Simplified Hover Effect */
+.btn:hover {
+    background-color: rgb(184, 66, 66);
+    color: white; /* Added for better contrast on hover */
+}
+
+/* 3. Refined Counter Display */
+.Counter {
+    display: block;
+    text-align: center;
+    font-size: 8rem; /* Adjusted from 10em to be slightly more manageable */
+    font-family: Arial, sans-serif;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+/* 4. Container Styling */
+.box-1 {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px;
+    text-align: center; /* Centers the buttons inside the box */
+}
