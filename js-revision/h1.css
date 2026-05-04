@@ -1,37 +1,130 @@
-/* 1. Use a class for shared button styles (The "DRY" Principle) */
-.btn {
-    padding: 10px 20px; /* Fixed: 0px padding made buttons unusable */
-    font-size: larger;
-    color: blue;
-    background-color: rgb(227, 195, 150);
+/* Custom Properties for consistency */
+:root {
+    --primary: #6366f1;
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Card Container - Massive Stability */
+body > div {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Checkbox Styling as a Toggle */
+#subbtn {
+    width: 0; height: 0; visibility: hidden; position: absolute;
+}
+
+label[for="subbtn"] {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.25s;
-    border-radius: 5px;
-    border: 1px solid #333; /* Added a slight border for definition */
-    margin: 5px; /* Added spacing between buttons */
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
 }
 
-/* 2. Simplified Hover Effect */
-.btn:hover {
-    background-color: rgb(184, 66, 66);
-    color: white; /* Added for better contrast on hover */
+/* Custom indicator for Checkbox */
+label[for="subbtn"]::before {
+    content: '';
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    background: #334155;
+    border-radius: 12px;
+    margin-right: 12px;
+    position: relative;
+    transition: var(--transition);
 }
 
-/* 3. Refined Counter Display */
-.Counter {
+label[for="subbtn"]::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    left: 35px; /* Adjust based on padding */
+    transition: var(--transition);
+}
+
+#subbtn:checked + label::before { background: var(--primary); }
+#subbtn:checked + label::after { transform: translateX(20px); }
+
+/* Radio Button Group Section */
+body > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 5px;
+}
+
+input[type="radio"] {
+    display: none; /* Hidden for custom styling */
+}
+
+input[type="radio"] + label {
+    padding: 12px 16px;
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: var(--transition);
     display: block;
-    text-align: center;
-    font-size: 8rem; /* Adjusted from 10em to be slightly more manageable */
-    font-family: Arial, sans-serif;
-    border: 2px solid black;
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
 }
 
-/* 4. Container Styling */
-.box-1 {
-    border: 2px solid black;
-    padding: 20px;
-    margin: 20px;
-    text-align: center; /* Centers the buttons inside the box */
+/* "Hila" effect on Hover */
+input[type="radio"] + label:hover {
+    background: rgba(99, 102, 241, 0.1);
+    transform: translateX(8px);
+    border-color: rgba(99, 102, 241, 0.3);
+    color: var(--primary);
+}
+
+/* Selected Radio State */
+input[type="radio"]:checked + label {
+    background: var(--primary);
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+/* Paragraphs Styling (The feedback loop) */
+p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    min-height: 1.2em; /* Prevents layout jumping */
+}
+
+#paraforsub {
+    color: var(--primary);
+    font-weight: bold;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+}
+
+#paraforlesson {
+    color: var(--text-dim);
+    font-style: italic;
 }
