@@ -43,7 +43,7 @@
 // console.log(firstName)
 // console.log(lastName)
 
-let username = window.prompt("Enter your Username : ")
+// let username = window.prompt("Enter your Username : ")
 
 // username = username.trim();
 // let letter = username.charAt(0);
@@ -55,7 +55,60 @@ let username = window.prompt("Enter your Username : ")
 
 
 
-username = username.trim().charAt(0).toUpperCase() + username.trim().slice(1).toLowerCase()
+// username = username.trim().charAt(0).toUpperCase() + username.trim().slice(1).toLowerCase()
 
-console.log(username);
+// console.log(username);
 
+// let a = 1;
+// let b = 2;
+
+// [a,b] = [b , a]
+
+// console.log(a)
+// console.log(b)
+
+// const color = ["red" , "green", " yellow" , "blue" ,"black"];
+
+// const [firstcolor,...c] = color;
+
+// console.log(c)
+// console.log(firstcolor)
+
+function displayPerson({firstName,lastName,job = "Unemployeed",age}){
+
+  console.log(`name: ${firstName} ${lastName}`)
+  console.log(`Age: ${age}`)
+  console.log(`Job: ${job}`)
+
+}
+
+const person1 = {
+  firstName :  "Yuvraj",
+  lastName :  "Soni",
+  age : 30,
+  job: "CEO"
+}
+const person2 = {
+  firstName :  "chicku",
+  lastName :  "Soni",
+  age : 30,
+  job: "Manger"
+}
+const person3 = {
+  firstName :  "gorika",
+  lastName :  "Soni",
+  age : 30,
+  
+}
+
+// const {firstName,LastName, age ,job = "Unemployed"} = person3
+
+
+// console.log(firstName)
+// console.log(LastName)
+// console.log(job)
+// console.log(age)
+
+displayPerson(person1)
+displayPerson(person2)
+displayPerson(person3)
