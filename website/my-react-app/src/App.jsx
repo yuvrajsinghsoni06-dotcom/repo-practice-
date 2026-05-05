@@ -1,18 +1,16 @@
-import ColorPicker from "./colorPicker";
-import Mycomponents from "./Mycomponent.jsx";
-import Counter from "./Counter.jsx";
-import TodoList from "./to_Do LIst.jsx";
+
+import Student from "./student.jsx"
 
 function App() {
 
-  return(
-    <>
-    {/* <Mycomponents/> */}
-    {/* <Counter/> */}
-    <TodoList/>
-   
- 
-    </>
+
+
+  return(<>
+  <Student name = " yuvraj" age = {20} IsStudent = {true} />
+  <Student name = " yogi" age = {50} IsStudent = {false} />
+  <Student name = " Modi" age = {74} IsStudent = {false} />
+  <Student/>
+  </>
   );
 }
 
