@@ -1,13 +1,13 @@
 
-import Student from "./student.jsx"
-import Hooks from "./hooks.jsx"
+import UserList from "./Search.jsx"
 
 function App() {
 
 
 
   return(<>
-  <Hooks/>
+  {/* <Hooks/> */}
+  <UserList/>
   </>
   );
 }
