@@ -1,36 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Hooks() {
-  // 1. Corrected 'UseState' to lowercase 'useState'
-  const [count, setCount] = useState(0);
-  const [color , setColor] = useState("yellow");
+    const [width, setWidth] = useState(window.innerWidth);
+    const [height, setHeight] = useState(window.innerHeight); // Standardized to lowercase 'height'
 
-  // 2. This runs after every render
-  useEffect(() => {
-    document.title = `Count : ${count} ${color}`;
-  }, [count , color]);
+    useEffect(() => {
+        // 1. Define the handler inside or outside, but call it here
+        window.addEventListener("resize", handleResize);
+        console.log("Event Listener Added");
 
-  function addCount() {
-    setCount(c => c + 1);
-  }
+        // 2. Cleanup function: This is CRITICAL. 
+        // It removes the old listener before the component unmounts or re-renders.
+        return () => {
+            window.removeEventListener("resize", handleResize);
+            console.log("Event Listener Removed");
+        };
+    }, []); // 3. Empty dependency array ensures this only runs ONCE on mount
 
-  function diffCount() {
-    setCount(c => c - 1);
-  }
+    function handleResize() {
+        setHeight(window.innerHeight);
+        setWidth(window.innerWidth);
+    }
 
-  function ChangeColor() {
-    setColor(c => c === "green" ? "red" : "green");
-  }
-
-  // 3. Ensure the return statement is inside the function body
-  return (
-    <div>
-      <p style={{color : color}}>Count: {count}</p>
-      <button onClick={addCount}>Add</button><br/><br/>
-      <button onClick={diffCount}>Decrease</button>
-      <button onClick={ChangeColor}>Change Color</button>
-    </div>
-  );
+    return (
+        <div>
+            <p>Window Height: {height}px</p>
+            <p>Window Width: {width}px</p>
+        </div>
+    );
 }
 
 export default Hooks;
